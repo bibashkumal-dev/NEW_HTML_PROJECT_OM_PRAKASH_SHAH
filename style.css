@@ -1,0 +1,1581 @@
+
+/* Step 1: Basic page settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111111;
+    background-color: #f7f8fa;
+}
+
+/* Step 2: Navigation bar */
+.navbar {
+    min-height: 76px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    gap: 25px;
+}
+
+/* Simple text logo */
+.logo {
+    color: #111111;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-decoration: none;
+    border: 3px solid #e44343;
+    border-radius: 8px;
+    padding: 9px 5px;
+    flex-shrink: 0;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex: 1;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #111111;
+    font-size: 15px;
+}
+
+.menu a:hover {
+    color: #e31837;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+}
+
+.nav-right span:first-child,
+.nav-right span:nth-child(2) {
+    font-size: 23px;
+}
+
+.profile {
+    width: 35px;
+    height: 35px;
+    background-color: #e8d4b7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Step 3: Main two-column layout */
+.hero {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    min-height: 510px;
+    gap: 45px;
+    padding: 65px 5%;
+}
+
+/* Step 4: Left content */
+.hero-content {
+    padding-top: 0;
+}
+
+.hero-content h1 {
+    font-size: clamp(30px, 3.5vw, 44px);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -1.5px;
+}
+
+.red-line {
+    width: 40px;
+    height: 2px;
+    background-color: #f00024;
+    margin: 20px 0 25px;
+}
+
+.hero-content > p {
+    font-size: 21px;
+    line-height: 1.7;
+    color: #333333;
+    max-width: 540px;
+    margin-bottom: 35px;
+}
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #f00024;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 17px 25px;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+}
+
+.main-button:hover {
+    background-color: #c90020;
+}
+
+.main-button span,
+.explore span {
+    font-size: 24px;
+    line-height: 15px;
+}
+
+/* Step 5: Featured apps area */
+.featured {
+    padding: 0 15px;
+}
+
+.featured > h2 {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.small-line {
+    width: 24px;
+    height: 1px;
+    background-color: #f00024;
+    margin: 12px auto 40px;
+}
+
+/* Step 6: App grid */
+.app-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 28px;
+}
+
+.app {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.app-icon {
+    min-width: 36px;
+    font-size: 34px;
+    line-height: 1;
+    text-align: center;
+}
+
+.blue {
+    color: #2878cf;
+}
+
+.green {
+    color: #00a65a;
+}
+
+.red {
+    color: #ff3347;
+}
+
+.multicolor {
+    color: #1685d8;
+}
+
+.app h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.app p {
+    font-size: 14px;
+    color: #444444;
+    line-height: 1.4;
+    max-width: 190px;
+}
+
+/* Step 7: Explore link */
+.explore {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-top: 48px;
+    color: #0875d1;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.explore:hover {
+    color: #f00024;
+}
+
+/* Step 8: Tablet and mobile screens */
+@media (max-width: 1000px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .hero-content > p {
+        max-width: 650px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .menu {
+        order: 3;
+        flex-basis: 100%;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .menu a {
+        white-space: nowrap;
+        font-size: 13px;
+    }
+
+    .nav-right {
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+
+    .hero-content > p {
+        font-size: 17px;
+    }
+
+    .app-grid {
+        grid-template-columns: 1fr;
+        row-gap: 28px;
+    }
+
+    .app h3 {
+        font-size: 22px;
+    }
+
+    .explore {
+        justify-content: flex-start;
+        font-size: 12px;
+    }
+}
+
+
+
+/* 1. Basic settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+    background-color: #ffd900;
+}
+
+/* 2. Top section */
+.top-section {
+    background: linear-gradient(
+        to bottom,
+        #f7f8fa 0%,
+        #f7f8fa 54%,
+        #ffd900 54%,
+        #ffd900 100%
+    );
+    padding: 8px 15px 0;
+}
+
+/* 3. Two top cards */
+.top-cards {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    background-color: white;
+    border-radius: 9px;
+    box-shadow: 0 7px 0 rgba(190, 160, 0, 0.12);
+}
+
+.product-card {
+    min-height: 205px;
+    padding: 18px 18px 20px;
+    text-align: center;
+    position: relative;
+    border-radius: 5px;
+}
+
+/* 4. Card backgrounds */
+.catalyst {
+    background: linear-gradient(120deg, #f0f6fd, #e8f1ff);
+}
+
+.zia {
+    background: linear-gradient(120deg, #f7f0ff, #f7e8fb);
+}
+
+/* 5. Small labels */
+.label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.blue-label {
+    color: #2457a5;
+    background: #deebff;
+}
+
+.purple-label {
+    color: #8734a5;
+    background: #eedfff;
+}
+
+/* 6. Brand names */
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 13px;
+    min-height: 33px;
+    text-align: left;
+}
+
+.brand h3 {
+    font-size: 17px;
+}
+
+.brand small {
+    display: block;
+    font-size: 8px;
+}
+
+.brand strong {
+    display: block;
+    font-size: 15px;
+}
+
+.catalyst-icon {
+    color: #e94343;
+    font-size: 28px;
+    transform: rotate(-30deg);
+}
+
+.zia-icon {
+    color: #009c69;
+    font-size: 26px;
+}
+
+/* 7. Headings and paragraphs */
+.product-card h2 {
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: 400;
+    margin-bottom: 7px;
+}
+
+.catalyst h2 {
+    color: #31589d;
+}
+
+.zia h2 {
+    color: #743b85;
+}
+
+.product-card p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* 8. Outlined buttons */
+.outline-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid;
+    border-radius: 25px;
+    padding: 7px 19px;
+    text-decoration: none;
+    font-size: 9px;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.outline-button span {
+    font-size: 17px;
+}
+
+.blue-button {
+    color: #2878ed;
+    border-color: #80aaff;
+}
+
+.blue-button:hover {
+    color: white;
+    background: #2878ed;
+}
+
+.purple-button {
+    color: #8734dc;
+    border-color: #c67bff;
+}
+
+.purple-button:hover {
+    color: white;
+    background: #8734dc;
+}
+
+/* 9. Yellow section */
+.yellow-section {
+    background-color: #ffd900;
+    padding: 48px 20px;
+    min-height: 310px;
+}
+
+.yellow-content {
+    max-width: 755px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.25fr 0.85fr;
+    gap: 55px;
+}
+
+/* 10. Zoho One content */
+.zoho-one {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.cube-icon {
+    font-size: 45px;
+    color: #009be5;
+    line-height: 1;
+    margin-top: 12px;
+}
+
+.one-details {
+    flex: 1;
+}
+
+.eyebrow {
+    font-size: 10px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.one-details h1 {
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-bottom: 17px;
+}
+
+.one-details h3 {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.one-details p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #282400;
+    margin-bottom: 16px;
+}
+
+.try-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background-color: #f00024;
+    color: white;
+    padding: 11px 16px;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.try-button:hover {
+    background-color: #c60020;
+}
+
+.try-button span {
+    font-size: 17px;
+}
+
+/* 11. Testimonial */
+.testimonial {
+    border-left: 1px dotted rgba(0, 0, 0, 0.15);
+    padding-left: 58px;
+}
+
+.quote-icon {
+    width: 29px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: white;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 17px;
+}
+
+.testimonial blockquote {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    line-height: 1.45;
+    margin-bottom: 17px;
+}
+
+/* 12. Person information */
+.person {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.person-photo {
+    width: 46px;
+    height: 53px;
+    border-radius: 40%;
+    border: 2px solid #e7c400;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.person-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 10px;
+}
+
+.person-info strong {
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+/* 13. Tablet layout */
+@media (max-width: 800px) {
+    .yellow-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .testimonial {
+        padding-left: 25px;
+    }
+
+    .zoho-one {
+        gap: 12px;
+    }
+
+    .one-details h1 {
+        font-size: 28px;
+    }
+
+    .product-card h2 {
+        font-size: 16px;
+    }
+}
+
+/* 14. Mobile layout */
+@media (max-width: 550px) {
+    .top-section {
+        padding: 10px;
+    }
+
+    .top-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        min-height: 210px;
+        padding: 25px 12px 20px;
+    }
+
+    .product-card h2 {
+        font-size: 18px;
+    }
+
+    .yellow-section {
+        padding: 35px 20px;
+    }
+
+    .yellow-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .zoho-one {
+        gap: 14px;
+    }
+
+    .one-details h1 {
+        font-size: 30px;
+    }
+
+    .testimonial {
+        border-left: none;
+        border-top: 1px dotted rgba(0, 0, 0, 0.2);
+        padding: 25px 0 0;
+    }
+
+    .testimonial blockquote {
+        font-size: 18px;
+    }
+
+    .desktop-break {
+        display: none;
+    }
+}
+
+
+/* 1. Reset and page settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6f7f9;
+    color: #111;
+}
+
+/* 2. Photo collage */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 105px);
+    gap: 4px;
+    width: 100%;
+    height: 323px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.photo {
+    overflow: hidden;
+    background-color: #ddd;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+/* Small hover effect */
+.photo:hover img {
+    transform: scale(1.05);
+}
+
+/* 3. Different photo sizes */
+.photo1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.photo2 {
+    grid-column: 2;
+    grid-row: 1 / 3;
+}
+
+.photo3 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.photo4 {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.photo5 {
+    grid-column: 5;
+    grid-row: 1;
+}
+
+.photo6 {
+    grid-column: 6;
+    grid-row: 1 / 3;
+}
+
+.photo7 {
+    grid-column: 1;
+    grid-row: 2 / 4;
+}
+
+.photo8 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.photo9 {
+    grid-column: 4;
+    grid-row: 2 / 4;
+}
+
+.photo10 {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+.photo11 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.photo12 {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+/* 4. Core values section */
+.values-section {
+    background-color: #f6f7f9;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* 5. White card overlaps the collage */
+.values-card {
+    width: 285px;
+    min-height: 215px;
+    background-color: white;
+    padding: 20px 22px 12px;
+    text-align: center;
+    margin-top: -60px;
+    position: relative;
+    z-index: 2;
+}
+
+/* 6. Card heading */
+.values-card > h1 {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.35;
+    margin-bottom: 5px;
+}
+
+.title-line {
+    width: 25px;
+    height: 2px;
+    background-color: #f00024;
+    margin: 0 auto 15px;
+}
+
+/* 7. Two-column values layout */
+.values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+    row-gap: 14px;
+    text-align: left;
+}
+
+.value-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.value-icon {
+    font-size: 12px;
+    min-width: 14px;
+}
+
+.value-item h2 {
+    font-size: 7px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.value-item p {
+    font-size: 5.5px;
+    line-height: 1.5;
+    color: #444;
+}
+
+/* 8. Read our story button */
+.read-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #1680ff;
+    color: #0878e8;
+    text-decoration: none;
+    font-size: 6px;
+    padding: 5px 9px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.read-button span {
+    font-size: 12px;
+}
+
+.read-button:hover {
+    background-color: #0878e8;
+    color: white;
+}
+
+/* 9. Tablet screens */
+@media (max-width: 800px) {
+    .gallery {
+        grid-template-rows: repeat(3, 90px);
+        height: 278px;
+    }
+
+    .values-card {
+        width: 300px;
+    }
+}
+
+/* 1. Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+}
+
+/* 2. Trusted brands section */
+.brands-section {
+    background-color: #ffffff;
+    min-height: 255px;
+    text-align: center;
+    padding: 36px 20px 35px;
+}
+
+.section-heading {
+    font-size: 10px;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 0.2px;
+}
+
+.red-line {
+    width: 20px;
+    height: 2px;
+    background-color: #f00024;
+    margin: 13px auto 35px;
+}
+
+/* 3. Brand logos */
+.brand-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+    margin-bottom: 37px;
+}
+
+.amazon {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    position: relative;
+}
+
+.amazon::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 7px;
+    border-bottom: 2px solid #f8991d;
+    border-radius: 50%;
+    bottom: -3px;
+    left: 12px;
+    transform: rotate(8deg);
+}
+
+.kpmg {
+    font-size: 22px;
+    font-weight: 900;
+    font-style: italic;
+    color: #00338d;
+    border: 1px solid #a6b5d5;
+    padding: 4px;
+    text-decoration: underline;
+}
+
+.renault {
+    font-size: 37px;
+    font-weight: bold;
+    transform: scaleX(0.8);
+}
+
+.netflix {
+    font-size: 23px;
+    font-weight: 900;
+    color: #e50914;
+    letter-spacing: -1px;
+}
+
+.hp {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #000;
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.facebook {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 50%;
+    background-color: #1877f2;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 27px;
+}
+
+/* 4. Customer stories link */
+.customer-link,
+.video-link {
+    text-decoration: none;
+    color: #0878d8;
+    font-size: 11px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customer-link span,
+.video-link span,
+.learn-button span {
+    font-size: 22px;
+    line-height: 12px;
+}
+
+.customer-link:hover,
+.video-link:hover {
+    color: #e00024;
+}
+
+/* 5. Enterprise section */
+.enterprise-section {
+    background-color: #f7f8fa;
+    min-height: 325px;
+    padding: 73px 20px 50px;
+}
+
+.enterprise-container {
+    max-width: 815px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+}
+
+/* 6. Left content */
+.enterprise-content h1 {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+.enterprise-content > p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #252525;
+    margin-bottom: 22px;
+    max-width: 400px;
+}
+
+.learn-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #0878e8;
+    color: #0878e8;
+    padding: 11px 19px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.learn-button:hover {
+    color: white;
+    background-color: #0878e8;
+}
+
+/* 7. Testimonial */
+.testimonial blockquote {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #222;
+    margin-bottom: 19px;
+}
+
+/* 8. Customer details */
+.customer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.customer-avatar {
+    width: 56px;
+    height: 64px;
+    border-radius: 45%;
+    border: 2px solid #ddd;
+    background: linear-gradient(135deg, #dce2e8, #8795a4);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.customer-info h3 {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.customer-info p {
+    font-size: 11px;
+    line-height: 1.4;
+    color: #333;
+}
+
+/* 9. Mobile responsive design */
+@media (max-width: 650px) {
+    .brands-section {
+        padding: 35px 15px;
+    }
+
+    .brand-logos {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .enterprise-section {
+        padding: 40px 22px;
+    }
+
+    .enterprise-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .enterprise-content h1 {
+        font-size: 27px;
+    }
+
+    .enterprise-content > p {
+        font-size: 14px;
+    }
+
+    .testimonial blockquote {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 380px) {
+    .brand-logos {
+        gap: 18px;
+    }
+
+    .amazon,
+    .netflix {
+        font-size: 18px;
+    }
+
+    .kpmg {
+        font-size: 18px;
+    }
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f7f9;
+}
+
+.photo-gallery {
+    width: 100%;
+    height: 410px;
+    overflow: hidden;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+    .photo-gallery {
+        height: 300px;
+    }
+}
+
+
+    .values-card {
+        width: min(92%, 340px);
+        margin-top: -35px;
+        padding: 22px;
+    }
+
+    .values-card > h1 {
+        font-size: 15px;
+    }
+
+    .values-grid {
+        gap: 18px 12px;
+    }
+
+    .value-icon {
+        font-size: 15px;
+    }
+
+    .value-item h2 {
+        font-size: 9px;
+    }
+
+    .value-item p {
+        font-size: 8px;
+    }
+
+    .read-button {
+        font-size: 8px;
+    }
+
+
+
+/* 1. Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+}
+
+/* 2. Blue statistics section */
+.stats-section {
+    background-color: #0861ad;
+    color: white;
+    text-align: center;
+    min-height: 189px;
+    padding: 18px 15px 25px;
+}
+
+.stats-section h1 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.small-line {
+    width: 13px;
+    height: 1px;
+    background-color: #27c8dd;
+    margin: 6px auto 20px;
+}
+
+/* 3. Statistics row */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 26px;
+}
+
+.stat {
+    min-width: 69px;
+    padding: 0 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat h2 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.stat p {
+    font-size: 5px;
+    white-space: nowrap;
+}
+
+/* 4. More about Zoho button */
+.more-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 5px;
+    transition: 0.3s;
+}
+
+.more-button span {
+    font-size: 13px;
+}
+
+.more-button:hover {
+    background-color: white;
+    color: #0861ad;
+}
+
+/* 5. Main footer section */
+.footer-section {
+    background-color: #f2f4f9;
+    padding: 24px 15px 18px;
+    min-height: 320px;
+}
+
+/* 6. Footer call to action */
+.footer-cta {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.footer-cta h2 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.footer-cta p {
+    font-size: 11px;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.access-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background-color: #f00024;
+    color: white;
+    padding: 6px 9px;
+    font-size: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.access-button span {
+    font-size: 12px;
+}
+
+.access-button:hover {
+    background-color: #c9001d;
+}
+
+/* 7. Four-column links */
+.footer-links {
+    max-width: 420px;
+    margin: 0 auto 34px;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr 1fr;
+    gap: 17px;
+}
+
+.link-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.link-column h3 {
+    font-size: 8px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    white-space: nowrap;
+}
+
+.link-column a {
+    color: #222;
+    text-decoration: none;
+    font-size: 6px;
+    line-height: 1.25;
+}
+
+.link-column a:hover,
+.legal-links a:hover {
+    color: #0878d8;
+    text-decoration: underline;
+}
+
+/* 8. Social media icons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    color: #111;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.social-links .facebook {
+    background-color: #1877f2;
+    color: white;
+    border-radius: 50%;
+    font-size: 9px;
+}
+
+.social-links .youtube {
+    background-color: #ff0033;
+    color: white;
+    border-radius: 3px;
+    font-size: 6px;
+}
+
+.social-links .linkedin {
+    background-color: #0a66c2;
+    color: white;
+    font-size: 7px;
+}
+
+.social-links .instagram {
+    color: #e1306c;
+    font-size: 13px;
+}
+
+/* 9. Legal links */
+.legal-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    max-width: 500px;
+    margin: 0 auto 5px;
+    line-height: 1.5;
+}
+
+.legal-links a,
+.legal-links span {
+    font-size: 5px;
+    color: #333;
+    text-decoration: none;
+}
+
+.second-legal {
+    margin-bottom: 0;
+}
+
+/* 10. Dark copyright bar */
+.copyright-section {
+    min-height: 49px;
+    background-color: #090b1e;
+    color: white;
+    text-align: center;
+    padding: 14px 10px 8px;
+}
+
+.zoho-logo {
+    height: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.zoho-logo span {
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    border: 1px solid;
+    border-radius: 3px;
+    margin-left: -2px;
+    transform: rotate(-8deg);
+}
+
+.logo-red {
+    border-color: #ed3237 !important;
+}
+
+.logo-green {
+    border-color: #00a86b !important;
+    transform: rotate(12deg) !important;
+}
+
+.logo-blue {
+    border-color: #1683d8 !important;
+}
+
+.logo-yellow {
+    border-color: #ffb400 !important;
+    transform: rotate(8deg) !important;
+}
+
+.copyright-section p {
+    font-size: 6px;
+    color: #eee;
+}
+
+/* 11. Tablet and mobile layout */
+@media (max-width: 600px) {
+    .stats-section {
+        padding: 25px 10px;
+    }
+
+    .stats-container {
+        flex-wrap: wrap;
+        row-gap: 15px;
+    }
+
+    .stat {
+        min-width: 60px;
+        padding: 0 8px;
+    }
+
+    .stat h2 {
+        font-size: 13px;
+    }
+
+    .stat p {
+        font-size: 6px;
+    }
+
+    .footer-section {
+        padding: 30px 18px 20px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 350px;
+        gap: 25px;
+    }
+
+    .link-column h3 {
+        font-size: 12px;
+    }
+
+    .link-column a {
+        font-size: 10px;
+    }
+
+    .legal-links {
+        max-width: 350px;
+        gap: 5px;
+    }
+
+    .legal-links a,
+    .legal-links span {
+        font-size: 8px;
+    }
+
+    .copyright-section p {
+        font-size: 8px;
+    }
+}
